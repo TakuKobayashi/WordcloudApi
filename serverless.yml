@@ -23,6 +23,11 @@ service: wordcloud-api
 provider:
   name: aws
   runtime: python3.7
+  region: ap-northeast-1
+
+plugins:
+  - serverless-python-requirements
+  - serverless-offline
 
 # you can overwrite defaults here
 #  stage: dev
