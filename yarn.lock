@@ -415,7 +415,7 @@ cbor@5.0.1:
     bignumber.js "^9.0.0"
     nofilter "^1.0.3"
 
-chalk@^2.0.1, chalk@^2.4.2:
+chalk@^2.0.1, chalk@^2.1.0, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -524,6 +524,16 @@ dot-prop@^4.1.0:
   integrity sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
   dependencies:
     is-obj "^1.0.0"
+
+dotenv-expand@^4.0.1:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-4.2.0.tgz#def1f1ca5d6059d24a766e587942c21106ce1275"
+  integrity sha1-3vHxyl1gWdJKdm5YeULCEQbOEnU=
+
+dotenv@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
+  integrity sha1-hk7xN5rO1Vzm+V3r7NzhefegzR0=
 
 duplexer3@^0.1.4:
   version "0.1.4"
@@ -1280,6 +1290,15 @@ semver@^6.2.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
+
+serverless-dotenv-plugin@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/serverless-dotenv-plugin/-/serverless-dotenv-plugin-2.1.1.tgz#73f4638f71811a065ee51e2b363f2157327afabc"
+  integrity sha512-T08fI0XoWGMKfs1KEpYrFwG/6A+qR2UZyANgchV7jJAhRhCtO0my1oMTLovyone5UHXOwTojrwUw3pm8NYa3rg==
+  dependencies:
+    chalk "^2.1.0"
+    dotenv "^4.0.0"
+    dotenv-expand "^4.0.1"
 
 serverless-offline@^5.12.1:
   version "5.12.1"

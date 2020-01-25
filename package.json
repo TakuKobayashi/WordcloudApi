@@ -3,11 +3,12 @@
   "scripts": {
     "serverless": "serverless"
   },
-  "description": "Serverless webpack example using Typescript",
+  "description": "Serverless webpack example using python",
   "author": "TakuKobayashi",
   "private": true,
   "license": "MIT",
   "dependencies": {
+    "serverless-dotenv-plugin": "^2.1.1",
     "serverless-offline": "^5.12.1",
     "serverless-python-requirements": "^5.0.1"
   }

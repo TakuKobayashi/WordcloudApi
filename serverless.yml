@@ -28,6 +28,7 @@ provider:
 plugins:
   - serverless-python-requirements
   - serverless-offline
+  - serverless-dotenv-plugin
 
 # you can overwrite defaults here
 #  stage: dev
