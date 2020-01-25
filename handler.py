@@ -1,10 +1,12 @@
 import json
-
+import requests
 
 def hello(event, context):
+    r = requests.get('https://github.com/timeline.json')
     body = {
         "message": "Go Serverless v1.0! Your function executed successfully!",
-        "input": event
+        "input": event,
+        "request_test": r.text
     }
 
     response = {

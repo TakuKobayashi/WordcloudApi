@@ -27,8 +27,12 @@ provider:
 
 plugins:
   - serverless-python-requirements
-  - serverless-offline
+  - serverless-offline-python
   - serverless-dotenv-plugin
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
 
 # you can overwrite defaults here
 #  stage: dev
