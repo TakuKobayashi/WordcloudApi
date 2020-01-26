@@ -23,3 +23,5 @@ node_modules/
 
 __pycache__/
 .idea
+
+yarn-error.log
