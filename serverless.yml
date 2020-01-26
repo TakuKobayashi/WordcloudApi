@@ -69,13 +69,13 @@ custom:
 
 functions:
   hello:
-    handler: src/handler.hello
+    handler: src/wordcloud.generate
     memorySize: 128
     timeout: 900
     events:
       - http:
           method: get
-          path: hello
+          path: wordcloud
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

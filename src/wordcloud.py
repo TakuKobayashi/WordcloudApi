@@ -1,7 +1,7 @@
 import json
 from src.libs import request_text_analysis
 
-def hello(event, context):
+def generate(event, context):
     body = {
         "message": "Go Serverless v1.0! Your function executed successfully!",
         "input": event,
