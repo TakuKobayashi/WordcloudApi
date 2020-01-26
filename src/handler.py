@@ -1,12 +1,11 @@
 import json
-import requests
+from src.libs import request_text_analysis
 
 def hello(event, context):
-    r = requests.get('https://github.com/timeline.json')
     body = {
         "message": "Go Serverless v1.0! Your function executed successfully!",
         "input": event,
-        "request_test": r.text
+        "request_test": request_text_analysis.sentence("aaaaa")
     }
 
     response = {
