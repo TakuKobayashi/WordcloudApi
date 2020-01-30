@@ -10,6 +10,7 @@ python-dotenv = "*"
 [packages]
 wordcloud = "*"
 requests = "*"
+xmltodict = "*"
 
 [requires]
 python_version = "3.7"
