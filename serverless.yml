@@ -86,10 +86,12 @@ package:
     - .serverless_plugins/**
 
 functions:
-  hello:
+  wordcloud:
     handler: src/handler.generate
     memorySize: 128
     timeout: 900
+    layers:
+      - {Ref: AssetsLambdaLayer}
     events:
       - http:
           method: get
@@ -148,3 +150,7 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+layers:
+  assets:
+    path: assets

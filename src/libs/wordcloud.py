@@ -8,13 +8,6 @@ from wordcloud import WordCloud
 import base64
 
 import os
-from os.path import join, dirname
-from dotenv import load_dotenv
-
-load_dotenv(verbose=True)
-
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
 
 def morphological_analyze(input_text):
     response = requests.post('https://jlp.yahooapis.jp/MAService/V1/parse',

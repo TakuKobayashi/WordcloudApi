@@ -1,12 +1,18 @@
 # coding:utf-8
 
 import json
+import subprocess
 from src.libs import wordcloud
 
 def generate(event, context):
-    analyzed = wordcloud.morphological_analyze("pairsは年収600~　身長170より上　4大卒以上　禁煙者ってのが男性としての人権でどれか一つでもステータスがそこに達してないとないものとして扱われるんだなって気がしました。検索条件設定するから出てこないしね。いいねはたくさん来るわけだし")
+    res = subprocess.check_output('ls /opt/')
+    print(res)
+    base64_image = wordcloud.generate_image(
+        "pairsは年収600~　身長170より上　4大卒以上　禁煙者ってのが男性としての人権でどれか一つでもステータスがそこに達してないとないものとして扱われるんだなって気がしました。検索条件設定するから出てこないしね。いいねはたくさん来るわけだし",
+        "/opt/fonts/TowerGothic.otf"
+    )
     body = {
-        "request_test": analyzed
+        "base64_image_png": base64_image
     }
 
     response = {
@@ -15,12 +21,3 @@ def generate(event, context):
     }
 
     return response
-
-    # Use this code if you don't use the http event with the LAMBDA-PROXY
-    # integration
-    """
-    return {
-        "message": "Go Serverless v1.0! Your function executed successfully!",
-        "event": event
-    }
-    """
