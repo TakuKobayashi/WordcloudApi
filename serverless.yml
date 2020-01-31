@@ -66,10 +66,28 @@ custom:
 #  exclude:
 #    - exclude-me.py
 #    - exclude-me-dir/**
+package:
+  exclude:
+    - node_modules/**
+    - docs/**
+    - dockers/**
+    - tmp/**
+    - .git/**
+    - .gitignore
+    - package.json
+    - README.md
+    - server.py
+    - swagger.yml
+    - yarn.lock
+    - .env.sample
+    - .DS_Store
+    - npm-debug.log
+    - .serverless/**
+    - .serverless_plugins/**
 
 functions:
   hello:
-    handler: src/wordcloud.generate
+    handler: src/handler.generate
     memorySize: 128
     timeout: 900
     events:
