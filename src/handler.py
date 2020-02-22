@@ -1,14 +1,29 @@
 # coding:utf-8
 
 import json
-import subprocess
 from src.libs import wordcloud_generator
 
 
 def generate_from_sentence(event, context):
+    input_params = parse_inputs(event);
+
+    if input_params["sentence"] is None:
+        return {
+            "statusCode": 400,
+            "headers": {
+                'Content-Type': 'application/json',
+            },
+            "body": {
+                "message": "sentence is Nothing",
+            },
+        }
+
     base64_image = wordcloud_generator.generate_image(
-        "pairsは年収600~　身長170より上　4大卒以上　禁煙者ってのが男性としての人権でどれか一つでもステータスがそこに達してないとないものとして扱われるんだなって気がしました。検索条件設定するから出てこないしね。いいねはたくさん来るわけだし",
-        "/opt/TowerGothic.otf"
+        input_text=input_params["sentence"],
+        font_file_path=input_params["font_file_path"],
+        background_color=input_params["background_color"],
+        width=input_params["width"],
+        height=input_params["height"]
     )
 
     response = {
@@ -21,3 +36,31 @@ def generate_from_sentence(event, context):
     }
 
     return response
+
+
+def parse_inputs(event):
+    result = {}
+    body_parser = {}
+    try:
+        if event['body'] is not None:
+            body_parser = json.loads(event['body'])
+    except ValueError:
+        pass
+
+    result["font_file_path"] = "/opt/TowerGothic.otf";
+    if body_parser["font"] is not None:
+        result["font_file_path"] = "/opt/" + body_parser["font"];
+
+    result["background_color"] = "white";
+    if body_parser["background_color"] is not None:
+        result["background_color"] = body_parser["background_color"];
+
+    result["width"] = 400;
+    if body_parser["width"] is not None:
+        result["width"] = body_parser["width"];
+
+    result["height"] = 200;
+    if body_parser["height"] is not None:
+        result["height"] = body_parser["height"];
+
+    return result;

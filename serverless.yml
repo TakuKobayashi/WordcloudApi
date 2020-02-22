@@ -49,11 +49,9 @@ functions:
       - {Ref: FontsLambdaLayer}
     events:
       - http:
-          method: get
-          path: wordcloud/generate
-      - http:
           method: post
           path: wordcloud/generate
+          cors: true
 
 layers:
   fonts:
