@@ -10,8 +10,13 @@ plugins:
   - serverless-python-requirements
   - serverless-offline
   - serverless-dotenv-plugin
+  - serverless-apigw-binary
 
 custom:
+  apigwBinary:
+    types:
+      - 'image/png'
+      - 'text/html'
   pythonRequirements:
     dockerizePip: true
 

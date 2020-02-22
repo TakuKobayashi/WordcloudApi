@@ -14,9 +14,10 @@ def wc_generate(event, context):
     response = {
         "statusCode": 200,
         "headers": {
-            'Content-Type': 'text/html',
+            'Content-Type': 'image/png',
         },
-        "body": '<html><body><img src="data:image/png;base64,' + base64_image + '"/></body></html>'
+        "body": base64_image,
+        "isBase64Encoded": True,
     }
 
     return response
