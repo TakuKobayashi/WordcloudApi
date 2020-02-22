@@ -88,27 +88,6 @@ class Navbar extends React.Component {
         const placeholder = this.props.placeholder;
         return (
             <React.Fragment>
-                <Sidebar
-                    sidebar={<SidebarContents />}
-                    open={this.state.sidebarOpen}
-                    onSetOpen={this.onSetSidebarOpen}
-                    sidebarClassName="sidebar-content"
-                    styles={{
-                        sidebar: {
-                            zIndex: 101,
-                            position: "fixed"
-                        },
-                        overlay: {
-                            zIndex: 100
-                        },
-                        dragHandle: {
-                            position: "fixed",
-                            zIndex: "99999"
-                        }
-                    }}
-                >
-                    <span></span>
-                </Sidebar>
                 <nav className="text-secondary" ref={c => (this.nav = c)}>
                     <a href="#mobilenav" id="menu-open" onClick={this.menuOpen}>
                         <span className="icon">

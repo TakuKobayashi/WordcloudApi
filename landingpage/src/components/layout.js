@@ -11,7 +11,6 @@ const Layout = ({ placeholder, children }) => {
                 placeholder={placeholder === undefined ? true : placeholder}
             />
             <div className="wrapper">{children}</div>
-            <Footer />
         </React.Fragment>
     );
 };
