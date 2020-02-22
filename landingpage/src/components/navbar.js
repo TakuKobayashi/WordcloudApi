@@ -1,30 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
-import Sidebar from "react-sidebar";
 import NavLinks from "./navlinks";
-import SocialLinks from "./sociallinks";
 import Logo from "./logo";
 import { Hamburger } from "./icons";
 
 import "../style/navbar.less";
-
-function SidebarContents() {
-    return (
-        <div className="sidebar-contents">
-            <div className="logo">
-                <Link to="/">
-                    <Logo />
-                </Link>
-            </div>
-            <div className="links text-secondary">
-                <NavLinks />
-            </div>
-            <div className="social-links">
-                <SocialLinks />
-            </div>
-        </div>
-    );
-}
 
 class Navbar extends React.Component {
     constructor(props) {

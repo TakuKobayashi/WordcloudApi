@@ -1,8 +1,6 @@
 import React from "react";
-import SectionTitle from "./sectiontitle";
 import { StaticQuery, graphql } from "gatsby";
 import { PaperPlane, Mapmarker, Mobile, Envelope, Loading } from "./icons";
-import SocialLinks from "./sociallinks";
 import "../style/contact.less";
 
 class Contact extends React.Component {
@@ -108,9 +106,6 @@ class Contact extends React.Component {
     render() {
         return (
             <section id="contact" className="container">
-                <div className="section-title">
-                    <SectionTitle title="CONTACT" />
-                </div>
                 <div
                     className={"row" + (this.showContactForm ? "" : " no-form")}
                     ref={c => (this.contactArea = c)}
@@ -268,9 +263,6 @@ class Contact extends React.Component {
                                     {this.props.contact.address}
                                 </li>
                             )}
-                            <li>
-                                <SocialLinks />
-                            </li>
                         </ul>
                     </div>
                 </div>
