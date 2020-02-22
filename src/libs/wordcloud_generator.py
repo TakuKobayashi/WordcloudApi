@@ -1,23 +1,23 @@
 # coding:utf-8
 
 from io import BytesIO
-
+from wordcloud import WordCloud
 import requests
 import xmltodict
-from wordcloud import WordCloud
 import base64
-
 import os
+
 
 def morphological_analyze(input_text):
     response = requests.post('https://jlp.yahooapis.jp/MAService/V1/parse',
-                      data={
-                          "appid": os.environ.get("YAHOO_API_KEY"),
-                          "results": "ma,uniq",
-                          "sentence": input_text,
-                      })
+                             data={
+                                 "appid": os.environ.get("YAHOO_API_KEY"),
+                                 "results": "ma,uniq",
+                                 "sentence": input_text,
+                             })
     response_dic = xmltodict.parse(response.text)
     return response_dic["ResultSet"]["ma_result"]["word_list"]["word"]
+
 
 def generate_image(input_text, font_file_path):
     analyzed_list = morphological_analyze(input_text)

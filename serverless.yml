@@ -13,9 +13,7 @@ plugins:
 
 custom:
   pythonRequirements:
-    usePipenv: true
     dockerizePip: true
-    layer: true
 
 package:
   exclude:
@@ -54,4 +52,8 @@ functions:
 
 layers:
   fonts:
+    name: ${self:provider.stage}-${self:provider.region}-layer
     path: fonts
+    description: fontFiles
+    compatibleRuntimes:
+      - python3.7
