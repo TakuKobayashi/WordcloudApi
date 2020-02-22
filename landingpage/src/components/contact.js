@@ -1,6 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { PaperPlane, Mapmarker, Mobile, Envelope, Loading } from "./icons";
+import { PaperPlane, Loading } from "./icons";
 import "../style/contact.less";
 
 class Contact extends React.Component {
@@ -228,41 +228,6 @@ class Contact extends React.Component {
                             </p>
                         )}
                         <ul>
-                            {this.props.contact.mail && (
-                                <li className="text-secondary item">
-                                    <span className="icon">
-                                        <Envelope />
-                                    </span>
-                                    <a
-                                        href={
-                                            "mailto:" + this.props.contact.mail
-                                        }
-                                    >
-                                        {this.props.contact.mail}
-                                    </a>
-                                </li>
-                            )}
-                            {this.props.contact.phone && (
-                                <li className="text-secondary item">
-                                    <span className="icon">
-                                        <Mobile />
-                                    </span>
-                                    <a href={"tel:" + this.props.contact.phone}>
-                                        {this.props.contact.phone}
-                                    </a>
-                                </li>
-                            )}
-                            {this.props.contact.address && (
-                                <li
-                                    className="text-tertiary item"
-                                    style={{ whiteSpace: "pre" }}
-                                >
-                                    <span className="icon">
-                                        <Mapmarker />
-                                    </span>
-                                    {this.props.contact.address}
-                                </li>
-                            )}
                         </ul>
                     </div>
                 </div>

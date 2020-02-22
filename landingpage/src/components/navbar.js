@@ -36,24 +36,6 @@ class Navbar extends React.Component {
         logo.addEventListener("load", function() {
             _this.changeNavbarPlaceholderHeight();
         });
-
-        this.changeNavbarHeight();
-    }
-
-    changeNavbarHeight() {
-        /* While the name states changeNavbarHeight, this does not directly change the navbar height. It simply reduces the width of the logo, which reduces the height and thereby the overall navbar height.
-
-		Also this slightly reduces the vertical padding
-
-		*/
-
-        window.addEventListener("scroll", function() {
-            if (this.scrollY > 0) {
-                document.querySelector("nav").classList.add("scrolled");
-            } else {
-                document.querySelector("nav").classList.remove("scrolled");
-            }
-        });
     }
 
     changeNavbarPlaceholderHeight() {
