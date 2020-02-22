@@ -22,6 +22,7 @@ custom:
 
 package:
   exclude:
+    - landingpage/**
     - node_modules/**
     - docs/**
     - dockers/**
@@ -41,7 +42,7 @@ package:
     - .serverless_plugins/**
 
 functions:
-  wordcloud:
+  wordcloud_sentence:
     handler: src/handler.generate_from_sentence
     memorySize: 128
     timeout: 900
@@ -50,7 +51,19 @@ functions:
     events:
       - http:
           method: post
-          path: wordcloud/generate
+          path: wordcloud/generate/sentence
+          cors: true
+
+  wordcloud_url:
+    handler: src/handler.generate_from_url
+    memorySize: 128
+    timeout: 900
+    layers:
+      - {Ref: FontsLambdaLayer}
+    events:
+      - http:
+          method: post
+          path: wordcloud/generate/url
           cors: true
 
 layers:

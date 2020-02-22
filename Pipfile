@@ -11,6 +11,8 @@ python-dotenv = "*"
 wordcloud = "*"
 requests = "*"
 xmltodict = "*"
+lxml = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.7"
