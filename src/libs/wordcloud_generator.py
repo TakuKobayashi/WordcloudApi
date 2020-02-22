@@ -19,13 +19,19 @@ def morphological_analyze(input_text):
     return response_dic["ResultSet"]["ma_result"]["word_list"]["word"]
 
 
-def generate_image(input_text, font_file_path):
+def generate_image(input_text, font_file_path, background_color="white", width=400, height=200):
     analyzed_list = morphological_analyze(input_text)
     words = []
     for analyzed in analyzed_list:
         if analyzed["pos"] == '名詞':
             words.append(analyzed["surface"])
-    wc = WordCloud(background_color="white", stopwords={"もの", "これ", "ため", "それ", "ところ", "よう"}, font_path=font_file_path)
+    wc = WordCloud(
+        background_color=background_color,
+        width=width,
+        height=height,
+        stopwords={"もの", "これ", "ため", "それ", "ところ", "よう"},
+        font_path=font_file_path
+    )
     wc.generate(" ".join(words))
     word_cloud_image = wc.to_image()
 

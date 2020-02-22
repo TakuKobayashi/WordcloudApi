@@ -42,7 +42,7 @@ package:
 
 functions:
   wordcloud:
-    handler: src/handler.wc_generate
+    handler: src/handler.generate_from_sentence
     memorySize: 128
     timeout: 900
     layers:

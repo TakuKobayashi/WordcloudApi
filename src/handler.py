@@ -5,7 +5,7 @@ import subprocess
 from src.libs import wordcloud_generator
 
 
-def wc_generate(event, context):
+def generate_from_sentence(event, context):
     base64_image = wordcloud_generator.generate_image(
         "pairsは年収600~　身長170より上　4大卒以上　禁煙者ってのが男性としての人権でどれか一つでもステータスがそこに達してないとないものとして扱われるんだなって気がしました。検索条件設定するから出てこないしね。いいねはたくさん来るわけだし",
         "/opt/TowerGothic.otf"
