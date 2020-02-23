@@ -1,5 +1,5 @@
 let siteMetadata = {
-    title: `Elemental`,
+    title: `wordcloud-api-demo-page`,
     capitalizeTitleOnHome: true,
     logo: `/images/logo.png`,
     icon: `/images/icon.png`,
@@ -18,7 +18,7 @@ let siteMetadata = {
         },
         {
             name: "GitHub",
-            url: "https://github.com/akzhy/gatsby-starter-elemental"
+            url: "https://github.com/TakuKobayashi/WordcloudApi"
         }
     ],
     footerLinks: [],

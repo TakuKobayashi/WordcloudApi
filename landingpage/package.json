@@ -1,8 +1,8 @@
 {
-	"name": "gatsby-starter-elemental",
+	"name": "wordcloud-api-demo-page",
 	"description": "A simple starter to get up and developing quickly with Gatsby",
 	"version": "0.1.0",
-	"author": "Akshay <hi@akzhy.com>",
+	"author": "TakuKobayashi<keep_slimbody@yahoo.co.jp>",
 	"dependencies": {
 		"gatsby": "^2.10.4",
 		"gatsby-custom-md": "^1.0.2",
@@ -41,9 +41,9 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/akzhy/elemental"
+		"url": "https://github.com/TakuKobayashi/WordcloudApi"
 	},
 	"bugs": {
-		"url": "https://github.com/akzhy/elemental/issues"
+		"url": "https://github.com/TakuKobayashi/WordcloudApi/issues"
 	}
 }
