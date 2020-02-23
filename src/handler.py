@@ -19,7 +19,7 @@ def generate_from_sentence(event, context):
             },
         }
 
-    base64_image = wordcloud_generator.generate_image(
+    base64_image = wordcloud_generator.generate_image_base64(
         input_text=input_params["sentence"],
         font_file_path=input_params["font_file_path"],
         background_color=input_params["background_color"],
@@ -54,7 +54,7 @@ def generate_from_url(event, context):
         }
 
     text = load_clear_html_text.load_text_from_url(input_params["url"]);
-    base64_image = wordcloud_generator.generate_image(
+    base64_image = wordcloud_generator.generate_image_base64(
         input_text=text,
         font_file_path=input_params["font_file_path"],
         background_color=input_params["background_color"],

@@ -37,4 +37,8 @@ def generate_image(input_text, font_file_path, background_color="white", width=4
 
     buffer = BytesIO()
     word_cloud_image.save(buffer, format="PNG")
-    return base64.b64encode(buffer.getvalue()).decode().replace("'", "")
+    return buffer.getvalue()
+
+
+def generate_image_base64(input_text, font_file_path, background_color="white", width=400, height=200):
+    return base64.b64encode(generate_image(input_text, font_file_path, background_color, width, height)).decode().replace("'", "")
