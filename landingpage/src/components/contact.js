@@ -10,15 +10,10 @@ class Contact extends React.Component {
         this.state = {
             submitDisabled: false
         };
+        this.generateType = this.props.content.apiPathes[0].name;
 
         this.textAreaInput = this.textAreaInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
-        this.showContactForm = true;
-
-        if (this.props.contact.api_url === "") {
-            this.showContactForm = false;
-        }
     }
 
     textAreaInput(event) {
@@ -84,12 +79,8 @@ class Contact extends React.Component {
     }
 
     componentDidMount() {
-        if (this.showContactForm) {
-            let color = window
-                .getComputedStyle(this.btn, null)
-                .getPropertyValue("color");
-            this.btn.querySelector("path").setAttribute("fill", color);
-        }
+        let color = window.getComputedStyle(this.btn, null).getPropertyValue("color");
+        this.btn.querySelector("path").setAttribute("fill", color);
 
         let li = this.contactArea.querySelectorAll(".item");
 
@@ -104,46 +95,50 @@ class Contact extends React.Component {
     }
 
     render() {
+        const generateTypeOptions = this.props.content.apiPathes.map(pathContent => <option value={pathContent.name}>{pathContent.name}</option>)
+        const fontOptions = this.props.content.fonts.map(font => <option value={font.filename}>{font.name}</option>)
+
         return (
             <section id="contact" className="container">
                 <div
-                    className={"row" + (this.showContactForm ? "" : " no-form")}
+                    className="row"
                     ref={c => (this.contactArea = c)}
                 >
-                    {this.showContactForm && (
-                        <div className="col s12 m6">
-                            <form>
+                    <div className="col s12 m6">
+                        <form>
+                            <div className="field">
+                                <label>
+                                    <span className="label text-tertiary">
+                                        Generate image from
+                                    </span>
+                                    <div className="input-border">
+                                        <select
+                                            className="field-box"
+                                            name="generate_type"
+                                            id="generate_type"
+                                            onChange={(e) => { console.log(e) }}
+                                            required
+                                        >
+                                            {generateTypeOptions}
+                                        </select>
+                                    </div>
+                                </label>
+                            </div>
                                 <div className="field">
                                     <label>
                                         <span className="label text-tertiary">
-                                            Name
+                                            Font
                                         </span>
                                         <div className="input-border">
-                                            <input
-                                                type="text"
-                                                ref={c => (this.dataName = c)}
+                                            <select
                                                 className="field-box"
-                                                name="name"
-                                                id="name"
+                                                name="font"
+                                                id="font"
+                                                onChange={(e) => { console.log(e) }}
                                                 required
-                                            />
-                                        </div>
-                                    </label>
-                                </div>
-                                <div className="field">
-                                    <label>
-                                        <span className="label text-tertiary">
-                                            Email
-                                        </span>
-                                        <div className="input-border">
-                                            <input
-                                                type="email"
-                                                ref={c => (this.dataEmail = c)}
-                                                className="field-box"
-                                                name="email"
-                                                id="email"
-                                                required
-                                            />
+                                            >
+                                                {fontOptions}
+                                            </select>
                                         </div>
                                     </label>
                                 </div>
@@ -214,22 +209,6 @@ class Contact extends React.Component {
                                 </div>
                             </form>
                         </div>
-                    )}
-                    <div
-                        className={
-                            this.showContactForm
-                                ? "col s12 m6 details"
-                                : "col s12 details"
-                        }
-                    >
-                        {this.props.contact.description && (
-                            <p className="text-tertiary">
-                                {this.props.contact.description}
-                            </p>
-                        )}
-                        <ul>
-                        </ul>
-                    </div>
                 </div>
             </section>
         );
@@ -242,17 +221,20 @@ export default () => (
             query {
                 site {
                     siteMetadata {
-                        contact {
-                            api_url
-                            description
-                            mail
-                            phone
-                            address
+                        content {
+                            apiPathes {
+                                name,
+                                path
+                            }
+                            fonts {
+                                name,
+                                filename
+                            }
                         }
                     }
                 }
             }
         `}
-        render={data => <Contact contact={data.site.siteMetadata.contact} />}
+        render={data => <Contact content={data.site.siteMetadata.content} />}
     />
 );

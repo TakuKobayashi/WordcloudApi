@@ -23,6 +23,44 @@ let siteMetadata = {
     ],
     footerLinks: [],
     social: [],
+    content: {
+        apiPathes: [
+            {
+                name: "sentence",
+                path: "/wordcloud/sentence/generate"
+            },
+            {
+                name: "url",
+                path: "/wordcloud/url/generate"
+            }
+        ],
+        fonts: [
+            {
+                name: "SourceHanCodeJP-Normal",
+                filename: "SourceHanCodeJP-Normal.otf"
+            },
+            {
+                name: "HigashiOme-Gothic",
+                filename: "HigashiOme-Gothic-1.3i.otf"
+            },
+            {
+                name: "ipaexg",
+                filename: "ipaexg.otf"
+            },
+            {
+                name: "ipaexm",
+                filename: "ipaexm.otf"
+            },
+            {
+                name: "Mamelon",
+                filename: "Mamelon.otf"
+            },
+            {
+                name: "TowerGothic",
+                filename: "TowerGothic.otf"
+            }
+        ]
+    },
     contact: {
         /* Leave the below value completely empty (no space either) if you don't want a contact form. */
         api_url: "./test.json",

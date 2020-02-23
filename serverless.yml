@@ -51,7 +51,7 @@ functions:
     events:
       - http:
           method: post
-          path: wordcloud/generate/sentence
+          path: wordcloud/sentence/generate
           cors: true
 
   wordcloud_url:
@@ -63,7 +63,7 @@ functions:
     events:
       - http:
           method: post
-          path: wordcloud/generate/url
+          path: wordcloud/url/generate
           cors: true
 
 layers:
