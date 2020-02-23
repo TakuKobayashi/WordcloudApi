@@ -8,7 +8,7 @@ from src.libs import load_clear_html_text
 def generate_from_sentence(event, context):
     input_params = parse_inputs(event);
 
-    if input_params["sentence"] is None:
+    if "sentence" not in input_params:
         return {
             "statusCode": 400,
             "headers": {
@@ -42,7 +42,7 @@ def generate_from_sentence(event, context):
 def generate_from_url(event, context):
     input_params = parse_inputs(event);
 
-    if input_params["url"] is None:
+    if "url" not in input_params:
         return {
             "statusCode": 400,
             "headers": {
@@ -80,23 +80,24 @@ def parse_inputs(event):
     try:
         if event['body'] is not None:
             body_parser = json.loads(event['body'])
+            result = body_parser.copy();
     except ValueError:
         pass
 
     result["font_file_path"] = "/opt/SourceHanCodeJP-Normal.otf";
-    if body_parser["font"] is not None:
+    if "font" in body_parser:
         result["font_file_path"] = "/opt/" + body_parser["font"];
 
     result["background_color"] = "white";
-    if body_parser["background_color"] is not None:
+    if "background_color" in body_parser:
         result["background_color"] = body_parser["background_color"];
 
     result["width"] = 400;
-    if body_parser["width"] is not None:
+    if "width" in body_parser:
         result["width"] = body_parser["width"];
 
     result["height"] = 200;
-    if body_parser["height"] is not None:
+    if "height" in body_parser:
         result["height"] = body_parser["height"];
 
     return result;
