@@ -2,7 +2,6 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Link from "./link";
 import { Location } from "@reach/router";
-import { Sun, Moon } from "./icons";
 
 function ListItem(props) {
     const data = props.data;
@@ -74,14 +73,12 @@ class ThemeSwitchButton extends React.Component {
                             data-switch-to="dark"
                             className={!this.state.darkMode ? "active" : ""}
                         >
-                            <Sun />
                         </div>
                         <div
                             title="Switch to Light Mode"
                             data-switch-to="light"
                             className={this.state.darkMode ? "active" : ""}
                         >
-                            <Moon />
                         </div>
                     </div>
                 </li>

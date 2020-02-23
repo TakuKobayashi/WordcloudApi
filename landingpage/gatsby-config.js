@@ -6,65 +6,23 @@ let siteMetadata = {
     titleImage: `/images/wall.jpg`,
     introTag: `PHOTOGRAPHER | VIDEOGRAPHER`,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-    author: `@_akzhy`,
+    author: `TakuKobayashi`,
     blogItemsPerPage: 10,
     portfolioItemsPerPage: 10,
     darkmode: true,
     switchTheme: true,
     navLinks: [
         {
-            name: "HOME",
-            url: "/"
-        },
-        {
-            name: "ABOUT",
-            url: "/about"
-        },
-        {
-            name: "BLOG",
-            url: "/blog"
-        },
-        {
-            name: "PORTFOLIO",
-            url: "/portfolio"
-        },
-        {
-            name: "CONTACT",
-            url: "/contact"
-        }
-    ],
-    footerLinks: [
-        {
-            name: "PRIVACY POLICY",
-            url: "/privacy-policy"
+            name: "REFERENCES",
+            url: "/apidpcs/"
         },
         {
             name: "GitHub",
             url: "https://github.com/akzhy/gatsby-starter-elemental"
         }
     ],
-    social: [
-        {
-            name: "Facebook",
-            icon: "/images/Facebook.svg",
-            url: "#"
-        },
-        {
-            name: "Twitter",
-            icon: "/images/Twitter.svg",
-            url: "#"
-        },
-        {
-            name: "Instagram",
-            icon: "/images/Instagram.svg",
-            url: "#"
-        },
-        {
-            name: "Youtube",
-            icon: "/images/Youtube.svg",
-            url: "#"
-        }
-    ],
+    footerLinks: [],
+    social: [],
     contact: {
         /* Leave the below value completely empty (no space either) if you don't want a contact form. */
         api_url: "./test.json",

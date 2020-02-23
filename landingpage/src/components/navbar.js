@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import NavLinks from "./navlinks";
 import Logo from "./logo";
-import { Hamburger } from "./icons";
 
 import "../style/navbar.less";
 
@@ -51,11 +50,6 @@ class Navbar extends React.Component {
         return (
             <React.Fragment>
                 <nav className="text-secondary" ref={c => (this.nav = c)}>
-                    <a href="#mobilenav" id="menu-open" onClick={this.menuOpen}>
-                        <span className="icon">
-                            <Hamburger />
-                        </span>
-                    </a>
                     <Link to="/">
                         <Logo />
                     </Link>
